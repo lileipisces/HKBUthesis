@@ -1,0 +1,166 @@
+\usepackage{srcltx}
+\usepackage{epsfig}
+\usepackage{graphicx,amssymb,amsmath,amsthm}
+\usepackage{graphicx,color,enumerate}
+\usepackage[rflt]{floatflt}
+\usepackage{rotating}
+\usepackage{caption2}
+\usepackage{cases}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{multicol}
+\usepackage{pstricks}
+
+
+\topmargin 20mm      % the top margin is not less than 2 cm
+\textheight 24.0cm
+\textwidth 150mm
+\oddsidemargin 35mm    % the binding margin is not less than 3.5 cm
+\evensidemargin 25mm
+%\evensidemargin 35mm
+
+\headsep 0in
+\voffset -28mm
+\hoffset -25.4mm
+
+\renewcommand{\contentsname}{\leftline{Table of Contents}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\pagenumbering{roman}
+\renewcommand{\baselinestretch}{1.6}\normalsize
+\def\title#1{\def\ntitle{#1}}
+\def\author#1{\def\nauthor{#1}}
+\def\supervisor#1{\def\nsupervisor{#1}}
+\def\degree#1{\def\ndegree{#1}}
+\def\date#1{\def\ndate{#1}}
+\newcommand{\Thesistitle}
+{
+\newpage
+\null\vspace*{0.5in}
+\begin{center}
+	{\Large\bf \ntitle}
+
+	\vspace*{3.5cm} {\large\bf \nauthor} \vspace*{2cm}
+
+	{\bf A thesis submitted in partial fulfilment of the requirements
+
+	for the degree of}
+
+	{\normalsize \ndegree}
+
+	\vspace*{3.5cm}
+
+
+	{\normalsize\bf Principal Supervisor:}
+
+	{\bf \nsupervisor \space (Hong Kong Baptist University)}
+
+	\vspace*{2cm}
+	{\normalsize \ndate}
+
+	\thispagestyle{empty}
+\end{center}
+}
+
+
+\newcommand{\thesis}
+{
+\newpage
+\pagenumbering{arabic} \setcounter{chapter}{0}
+\setcounter{section}{0} \setcounter{page}{1} 
+}
+
+\makeatletter
+\renewcommand*\l@chapter[2]{%
+\ifnum \c@tocdepth >\m@ne
+\addpenalty{-\@highpenalty}%
+\vskip 1.0em \@plus\p@
+\setlength\@tempdima{1.5em}%
+\begingroup
+\parindent \z@  \rightskip \@pnumwidth
+\parfillskip -\@pnumwidth
+\leavevmode %\bfseries
+\advance \leftskip 2.4cm %\leftskip\@tempdima
+\hskip -\leftskip
+#1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+\penalty\@highpenalty
+    \endgroup
+    \fi}
+    \def\@chapter[#1]#2{
+    \ifnum \c@secnumdepth >\m@ne
+    \refstepcounter{chapter}%
+    \typeout{\@chapapp\space\thechapter.}%
+    \addcontentsline{toc}{chapter}%
+    {\bf \protect \numberline {Chapter \thechapter}\hspace*{1.5cm} {#1}}%
+    \else
+    \addcontentsline{toc}{chapter}{#1}%
+    \fi
+    \chaptermark{#1}%
+    \addtocontents{lof}{\protect\addvspace{10\p@}}%
+    \addtocontents{lot}{\protect\addvspace{10\p@}}%
+    \if@twocolumn
+    \@topnewpage[\@makechapterhead{#2}]%
+    \else
+    \@makechapterhead{#2}%
+    \@afterheading
+    \fi
+    \renewcommand{\chaptermark}[1]{\markright{\chaptername \ \thechapter.\ #1}{}}
+    }
+
+
+
+    \makeatother
+
+
+
+    \newtheorem{theorem}{Theorem}[section]
+    \newtheorem{lemma}[theorem]{Lemma}
+    \newtheorem{corollary}[theorem]{Corollary}
+    \newtheorem{definition}[theorem]{Definition}
+    \newtheorem{proposition}[theorem]{Proposition}
+    \newtheorem{claim}{Claim}
+    \newtheorem{conjecture}[theorem]{Conjecture}
+    \newtheorem{model}{{ \bf Model}}[section]
+    \newtheorem{assumption}{{ \bf Assumption}}[section]
+    \newtheorem{remark}{{ \bf Remark}}
+
+    \newtheorem{prop}{Proposition}
+    \newtheorem{theo}{Theorem}
+
+
+    \renewcommand{\captionfont}{\footnotesize \tt}
+    \renewcommand{\captionlabelfont}{\footnotesize}
+
+    \makeatletter
+    \renewcommand*\l@chapter[2]{%
+    \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 1.0em \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+    \parindent \z@  \rightskip \@pnumwidth
+    \parfillskip -\@pnumwidth
+    \leavevmode \bfseries
+    \advance \leftskip 2.5cm %\leftskip\@tempdima
+    \hskip -\leftskip
+    #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \penalty\@highpenalty
+								    \endgroup
+								    \fi}
+								    \def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+								    \refstepcounter{chapter}%
+								    \typeout{\@chapapp\space\thechapter.}%
+								    \addcontentsline{toc}{chapter}%
+								    {\protect\numberline{Chapter \thechapter \ } \hspace*{1.5cm} #1}%
+								    \else
+								    \addcontentsline{toc}{chapter}{#1}%
+								    \fi
+								    \chaptermark{#1}%
+								    \addtocontents{lof}{\protect\addvspace{10\p@}}%
+								    \addtocontents{lot}{\protect\addvspace{10\p@}}%
+								    \if@twocolumn
+								    \@topnewpage[\@makechapterhead{#2}]%
+								    \else
+								    \@makechapterhead{#2}%
+								    \@afterheading
+								    \fi}
+								    \makeatother

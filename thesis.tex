@@ -1,0 +1,98 @@
+\documentclass[12pt,twoside]{report}
+\input{thesistemplate}
+\usepackage[hidelinks]{hyperref}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\begin{document}
+\pagestyle{plain}
+\author{LI Lei}
+\supervisor{Dr. CHEN Li}
+
+\title{Natural Language Explanation for Recommendations and Beyond}
+\degree{\bf Doctor of Philosophy}
+\date{\bf May 2022}
+\Thesistitle 
+
+
+\newpage
+\setcounter{page}{1}
+
+\chapter*{\centerline{ DECLARATION}}
+
+I hereby declare that this thesis represents my own work which has been done after registration for the degree of PhD at Hong Kong Baptist University, and has not been previously included in a thesis or dissertation submitted to this or any other institution for a degree, diploma or other qualifications.
+
+I have read the University's current research ethics guidelines, and accept responsibility for the conduct of the procedures in accordance with the University's Research Ethics Committee (REC). I have attempted to identify all the risks related to this research that may arise in conducting this research, obtained the relevant ethical and/or safety approval (where applicable), and acknowledged my obligations and the rights of the participants.
+
+\vskip 1cm
+
+\hfill Signature:$\underline{\hspace{4cm}}$
+
+\hfill May 2022
+\addcontentsline{toc}{chapter}{Declaration}
+\newpage
+\addcontentsline{toc}{chapter}{\bf Abstract}
+\chapter*{\centerline{ Abstract}}
+
+Your abstract
+
+\vspace{1cm}
+
+\noindent {\bf Keywords:} Explainable Recommendation, Explainable Artificial Intelligence, Recommender Systems
+
+\newpage
+\addcontentsline{toc}{chapter}{\bf Acknowledgments}
+\chapter*{\centerline{Acknowledgments}}
+
+I would like to thank Dr. Guozhong Li for the nice suggestion of making this template as well as the procedure open-source.
+
+\newpage % Use this part to insert the table of contents
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+
+\newpage % Use this part to insert the list of table.
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+\newpage % Use this part to insert the list of figure.
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\newpage % Use this part to insert the list of algorithm.
+\addcontentsline{toc}{chapter}{List of Algorithms}
+\listofalgorithms
+\addtocontents{loa}{\def\string\figurename{Algorithm}}
+
+\thesis % This command is used to set the page number.
+\newpage
+
+
+\chapter{Introduction} \label{ch:intro}
+\input{chapter1}
+
+\chapter{Literature Survey} \label{ch:survey}
+\input{chapter2}
+
+\chapter{Natural Language Explanation Generation} \label{ch:peter}
+\input{chapter3}
+
+\chapter{Conclusion and Future Work} \label{ch:conclude}
+\input{chapter4}
+
+\newpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\newpage
+\addcontentsline{toc}{chapter}{List of Publications}
+\input{pub}
+
+\newpage
+\addcontentsline{toc}{chapter}{Curriculum Vitae}
+\input{cv}
+
+\end{document}

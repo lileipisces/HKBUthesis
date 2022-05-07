@@ -1,0 +1,127 @@
+\section{Background}
+
+\section{Problem Formulation} \label{sec3:problem}
+
+
+\section{Model Description}
+
+
+\subsection{Input Representation}
+
+\begin{algorithm}
+	\caption{Sentence Grouping via Locality-Sensitive Hashing (LSH)}
+	\label{alg3:lsh}
+	\begin{algorithmic}[1]
+		\REQUIRE shingle size $n$, similarity threshold $t$, minimum group size $g$
+		\ENSURE explanation set $\mathcal{E}$, groups of sentences $\mathcal{M}$
+		\STATE Pre-process textual data to obtain the sentence collection $\mathcal{S}$
+		\STATE $lsh \gets MinHashLSH(t)$, $\mathcal{C} \gets \varnothing$
+		\FOR{sentence $s$ in $\mathcal{S}$}
+		\STATE $m \gets MinHash()$  // create MinHash for $s$
+		\FOR{$n$-shingle $h$ in $s$}
+		\STATE $m.update(h)$  // convert $s$ into $m$ by encoding its $n$-shingles
+		\ENDFOR
+		\STATE $lsh.insert(m)$, $\mathcal{C}.add(m)$  // $\mathcal{C}$: set of all sentences' MinHash
+		\ENDFOR
+		\STATE $\mathcal{M} \gets \varnothing$, $\mathcal{Q} \gets \varnothing$  // $\mathcal{Q}$: set of queried sentences
+		\FOR{$m$ in $\mathcal{C}$}
+		\IF{$m$ not in $\mathcal{Q}$}
+		\STATE $\mathcal{G} \gets lsh.query(m)$  // $\mathcal{G}$: ID set of duplicate sentences
+		\IF{$\mathcal{G}.size > g$}
+		\STATE $\mathcal{M}.add(\mathcal{G})$  // only keep groups with enough sentences
+		\STATE $\mathcal{E}.add(\mathcal{G}.get())$  // keep one explanation in each group
+		\ENDIF
+		\FOR{$m'$ in $\mathcal{G}$}
+		\STATE $lsh.remove(m')$, $\mathcal{Q}.add(m')$  // for efficiency
+		\ENDFOR
+		\ENDIF
+		\ENDFOR
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{Transformer and Attention Masking}
+
+
+
+\subsection{Explanation and Recommendation}
+
+
+\paragraph{Explanation Generation:}
+
+
+\paragraph{Context Prediction:}
+
+
+\paragraph{Rating Prediction:}
+
+
+\paragraph{Multi-task Learning:}
+
+
+\section{Experimental Setup}
+
+
+\subsection{Datasets}
+
+\begin{table}
+	\caption{Statistics of the three datasets.}
+	\begin{center}	
+		\begin{tabular}{l|r|r|r}
+			\hline
+			& Yelp & Amazon & TripAdvisor \\
+			\hline
+			\#users & 27,147 & 7,506 & 9,765 \\
+			\#items & 20,266 & 7,360 & 6,280 \\
+			\#records & 1,293,247 & 441,783 & 320,023 \\
+			\#features & 7,340 & 5,399 & 5,069 \\
+			\#records / user & 47.64 &58.86&32.77 \\
+			\#records / item & 63.81 &60.02&50.96 \\
+			\#words / explanation & 12.32 &14.14&13.01 \\
+			\hline
+		\end{tabular}
+	\end{center}	
+	\label{table3:dataset}
+\end{table}
+
+\subsection{Evaluation Metrics}
+
+
+\subsection{Compared Methods}
+
+
+\subsection{Implementation Details}
+
+
+
+
+
+\section{Results and Analysis}
+
+\subsection{Quantitative Analysis on Explanations}
+
+
+\subsection{Qualitative Case Study on Explanations}
+
+
+\subsection{Recommendation Performance}
+
+
+\subsection{Ablation Study}
+
+\begin{sidewaystable}[!tbp]
+	\caption[Ablation study on the smallest dataset TripAdvisor.]{Ablation study on the smallest dataset TripAdvisor. Arrows $\uparrow$ and $\downarrow$ respectively denote the performance increase and decrease compared with PETER.}
+	\begin{center}
+		\begin{tabular}{l|lll|lll|ll}
+			\hline
+			\multirow{2}{*}{} & \multicolumn{3}{c|}{Explainability} & \multicolumn{3}{c|}{Text Quality}  & \multicolumn{2}{c}{Recommendation} \\ \cline{2-9}
+			& FMR & FCR & DIV & USR & BLEU-1 & BLEU-4 & RMSE & MAE \\ \hline		
+			Disable $\mathcal{L}_c$ & 0.06 $\downarrow$ & 0.03 $\downarrow$ & 5.75 $\downarrow$ & 0.01 $\downarrow$ & 15.37 $\downarrow$ & 0.86 $\downarrow$ & 0.80 $\uparrow$ & 0.61 $\uparrow$ \\
+			Disable $\mathcal{L}_r$ & 0.07 & 0.14 $\uparrow$ & 2.90 $\uparrow$ & 0.10 $\uparrow$ & 16.16 $\uparrow$ & 1.15 $\uparrow$ & 3.23 $\downarrow$ & 3.10 $\downarrow$ \\
+			Left-to-Right Masking & 0.07 & 0.15 $\uparrow$ & 2.68 $\uparrow$ & 0.12 $\uparrow$ & 15.73 $\downarrow$ & 1.11 & 0.87 $\downarrow$ & 0.68 $\downarrow$ \\ \hline
+			PETER & 0.07 & 0.13 & 2.95 & 0.08 & 15.96 & 1.11 & 0.81 & 0.63 \\ \hline
+		\end{tabular}
+	\end{center}
+	\label{table3:ablation}
+\end{sidewaystable}
+
+\section{Summary}

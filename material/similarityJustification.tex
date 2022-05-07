@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thin Formal Letter
+% LaTeX Template
+% Version 2.0 (7/2/17)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% WikiBooks (http://en.wikibooks.org/wiki/LaTeX/Letters) with modifications by 
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{letter} % 10pt font size default, 11pt and 12pt are also possible
+
+\usepackage{geometry} % Required for adjusting page dimensions
+
+%\longindentation=0pt % Un-commenting this line will push the closing "Sincerely," to the left of the page
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	top=3cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	left=4.5cm, % Left margin
+	right=4.5cm, % Right margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+
+\usepackage{stix} % Use the Stix font by default
+
+\usepackage{microtype} % Improve justification
+
+%----------------------------------------------------------------------------------------
+%	YOUR NAME & ADDRESS SECTION
+%----------------------------------------------------------------------------------------
+
+\signature{Lei Li} % Your name for the signature at the bottom
+
+\address{DLB 625 \\ David C. Lam Building \\ 34 Renfrew Road \\ Kowloon Tong \\ (+852) XXXX-XXXX} % Your address and phone number
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	ADDRESSEE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{letter}{Graduate School \\ AAB 904, Level 9 \\ Academic and Administration Building \\ Hong Kong Baptist University} % Name/title of the addressee
+
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT SECTION
+%----------------------------------------------------------------------------------------
+
+\opening{\textbf{Dear Sir or Madam},}
+
+My name is Lei Li.
+I am a Ph.D. student in the Department of Computer Science with student no. XXXXXXXX.
+Two weeks ago, I submitted my thesis titled \textbf{Natural Language Explanation for Recommendations and Beyond} via the online submission system.
+Today I was informed of a rejection, because of the high similarity index.
+Here, I would like to justify why its similarity index is high with my previous publications.
+My thesis is comprised of the following 6 papers/manuscripts, which are my own work done after the registration for the degree of Ph.D. at HKBU.
+All of them are available online, even the second one that is currently under review.
+I have obtained the consent of all the co-authors to write them into my thesis, and the publishers of these papers also agree me to do so.
+My thesis's similarity to these 6 papers is 59\% (15\% + 14\% + 13\% + 12\% + 4\% + 1\%), which is quite close to the the reported 68\% of total similarity.
+The other 9\% of similarity could be attributed to the bibliography, my curriculum vitae, and the declaration, which are all marked in colors in the report.
+\begin{enumerate}
+	\item Paper 1. (\textbf{15\%, 1st in the similarity report})
+	\item Paper 2. [\textit{under review but online available}] (\textbf{14\%, 2nd in the similarity report})
+	\item Paper 3. (\textbf{13\%, 3rd in the similarity report})
+	\item Paper 4. (\textbf{12\%, 4th in the similarity report})
+	\item Paper 5. (\textbf{4\%, 5th in the similarity report})	
+	\item Paper 6. (\textbf{1\%, 7th in the similarity report})	
+\end{enumerate}
+
+I hope that you could re-consider my submission. Thank you for your time.
+
+\vspace{2\parskip} % Extra whitespace for aesthetics
+\closing{Sincerely,}
+\vspace{2\parskip} % Extra whitespace for aesthetics
+
+Endorsed by
+
+\vspace{2\parskip} % Extra whitespace for aesthetics
+\vspace{2\parskip} % Extra whitespace for aesthetics
+
+Dr. Li Chen
+
+% \ps{P.S. You can find additional information attached to this letter.} % Postscript text, comment this line to remove it
+
+% \encl{Copyright permission form} % Enclosures with the letter, comment this line to remove it
+
+%----------------------------------------------------------------------------------------
+
+\end{letter}
+ 
+\end{document}
