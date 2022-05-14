@@ -20,7 +20,7 @@ Hong Kong Baptist University (HKBU) PhD/MPhil thesis template (validated in May 
 
 ## 3. Submission of Thesis (for Examination)
 - Write your thesis with the template provided in this repository
-- After completing your thesis, make a similarity index on [Moodle](https://buelearning.hkbu.edu.hk/) (course GS8008 -> Turnitin assignment). It is suggested to remove the bibliography in your thesis, because the system will take the references into account when computing similarity, and thus result in high similarity index
+- After completing your thesis, make a similarity index on [Moodle](https://buelearning.hkbu.edu.hk/) (course GS8008 -> Turnitin assignment).
 - Submit your thesis and the similarity report
 - After two weeks (in my case), your thesis may be approved for examination. Or Graduate School may inform you of a rejection due to high similarity index. In the latter case, you may rephrase your thesis, or justify yourself if it is similar to your own published papers/preprints (e.g., >40%):
   - Go to the system when the similarity score is ready, and then click the color bar to see the detailed report. At the top right corner, click the similarity score, you will see the match overview. At right hand slide, Click the top few links (similarity >= 1%) to see which papers overlap with your thesis. Sometimes you may need to further click the link on the pop-up window
