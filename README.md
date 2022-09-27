@@ -43,3 +43,8 @@ Hong Kong Baptist University (HKBU) PhD/MPhil thesis template (validated in May 
 ## 6. Submission of Final Thesis (for Graduation)
 
 - After format checking, submit your final thesis
+
+
+## 7. Approval of Graduation
+
+- Click the link in the official procedure corresponding to this section to check senate meeting schedule. Few days after the senate meeting, your student email account will receive an e-transcript where it says "the student was approved by the senate to graduate"
